@@ -15,13 +15,15 @@ snapshot_checking_script.sh = Script to check if any volumes attached to servers
 
 AWS Policy used by these script should have following allowed: 
 
-storagegateway list-volume
-storagegateway list-tags-for-resource
-storagegateway create-snapshot
-storagegateway list-gateways
-ec2 create-tags 
-ec2 describe-snapshots
-ec2 describe-tags
-ec2 copy-snapshot
-ec2 delete-snapshot
+-storagegateway list-volume
+-storagegateway list-tags-for-resource
+-storagegateway create-snapshot
+-storagegateway list-gateways
+-ec2 create-tags 
+-ec2 describe-snapshots
+-ec2 describe-tags
+-ec2 copy-snapshot
+-ec2 delete-snapshot
+
+Altough Storage Gateway lets you schedule snapshot on regular basis but there is nothing to copy it to DR Region if required
 
