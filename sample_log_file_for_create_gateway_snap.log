@@ -1,0 +1,132 @@
+2016-08-07 16:30:02 - Logging to /tmp/logs/storage_gateway_snapshot_output_20160807_163001.log
+2016-08-07 16:30:02 - INFO ---- List of Gateway's attached to this AWS account
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+|                                                                  ListGateways                                                                   |
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+||                                                                   Gateways                                                                    ||
+|+---------------------------------------------------------------------+---------------+--------------+--------------------------+---------------+|
+||                             GatewayARN                              |   GatewayId   | GatewayName  | GatewayOperationalState  |  GatewayType  ||
+|+---------------------------------------------------------------------+---------------+--------------+--------------------------+---------------+|
+||  arn:aws:storagegateway:us-east-1:111111111111:gateway/sgw-ABC123C4 |  sgw-ABC123C4 |  gateway1    |  ACTIVE                  |  CACHED       ||
+||  arn:aws:storagegateway:us-east-1:111111111111:gateway/sgw-DF23SDFW |  sgw-DF23SDFW |  gateway2    |  ACTIVE                  |  CACHED       ||
+||  arn:aws:storagegateway:us-east-1:111111111111:gateway/sgw-DFWER23S |  sgw-DFWER23S |  sandbox     |  ACTIVE                  |  CACHED       ||
+|+---------------------------------------------------------------------+---------------+--------------+--------------------------+---------------+|
+
+2016-08-07 16:30:03 - INFO ---- Gateway type is PROD
+2016-08-07 16:30:03 - INFO ---- Gateway ARN: arn:aws:storagegateway:us-east-1:111111111111:gateway/sgw-ABC123C4
+
+2016-08-07 16:30:03 - INFO ---- Starting Gateway snapshot gateway-arn: arn:aws:storagegateway:us-east-1:111111111111:gateway/sgw-ABC123C4
+2016-08-07 16:30:04 - INFO ---- Running Below Command to Create SNAPSHOT for arn:aws:storagegateway:us-east-1:111111111111:gateway/sgw-ABC123C4/volume/vol-8CBA65E6
+2016-08-07 16:30:04 - INFO ---- aws --region us-east-1 storagegateway create-snapshot --volume-arn arn:aws:storagegateway:us-east-1:111111111111:gateway/sgw-ABC123C4/volume/vol-8CBA65E6 --snapshot-description GatewaySnapForVolumeNamevol-8CBA65E6-IscsiNamegateway1 --query SnapshotId
+2016-08-07 16:30:05 - SUCCESS - snapshot creation successfully started for vol: gateway1 volid: vol-8CBA65E6
+
+2016-08-07 16:30:07 - INFO ---- Running below command to create tags for snapshot...
+2016-08-07 16:30:07 - INFO ---- aws --region us-east-1 ec2 create-tags --resources snap-ae66e334 --tags Key=Name,Value=gateway1 Key=BU,Value=GlobalBackup Key=VolumeId,Value=vol-8CBA65E6 Key=BackupType,Value=WEEKLY Key=CreatedBy,Value=AutomatedBackupSG Key=BackupVolume,Value=StorageGateway
+2016-08-07 16:30:08 - INFO ---- Running Below Command to Create SNAPSHOT for arn:aws:storagegateway:us-east-1:111111111111:gateway/sgw-ABC123C4/volume/vol-8DC46CE6
+2016-08-07 16:30:08 - INFO ---- aws --region us-east-1 storagegateway create-snapshot --volume-arn arn:aws:storagegateway:us-east-1:111111111111:gateway/sgw-ABC123C4/volume/vol-8DC46CE6 --snapshot-description GatewaySnapForVolumeNamevol-8DC46CE6-IscsiNamegateway1 --query SnapshotId
+2016-08-07 16:30:09 - SUCCESS - snapshot creation successfully started for vol: gateway1 volid: vol-8DC46CE6
+
+2016-08-07 16:30:11 - INFO ---- Running below command to create tags for snapshot...
+2016-08-07 16:30:11 - INFO ---- aws --region us-east-1 ec2 create-tags --resources snap-39bc29be --tags Key=Name,Value=gateway1 Key=BU,Value=GlobalBackup Key=VolumeId,Value=vol-8DC46CE6 Key=BackupType,Value=WEEKLY Key=CreatedBy,Value=AutomatedBackupSG Key=BackupVolume,Value=StorageGateway
+2016-08-07 16:30:12 - INFO ---- Running Below Command to Create SNAPSHOT for arn:aws:storagegateway:us-east-1:111111111111:gateway/sgw-ABC123C4/volume/vol-A888ADC2
+2016-08-07 16:30:12 - INFO ---- aws --region us-east-1 storagegateway create-snapshot --volume-arn arn:aws:storagegateway:us-east-1:111111111111:gateway/sgw-ABC123C4/volume/vol-A888ADC2 --snapshot-description GatewaySnapForVolumeNamevol-A888ADC2-IscsiNamegateway1 --query SnapshotId
+2016-08-07 16:30:13 - SUCCESS - snapshot creation successfully started for vol: gateway1 volid: vol-A888ADC2
+
+2016-08-07 16:30:15 - INFO ---- Running below command to create tags for snapshot...
+2016-08-07 16:30:15 - INFO ---- aws --region us-east-1 ec2 create-tags --resources snap-f5655a6e --tags Key=Name,Value=gateway1 Key=BU,Value=GlobalBackup Key=VolumeId,Value=vol-A888ADC2 Key=BackupType,Value=WEEKLY Key=CreatedBy,Value=AutomatedBackupSG Key=BackupVolume,Value=StorageGateway
+
+2016-08-07 16:30:16 - INFO ---- Start of checking snapshot state so it can be added to copy list
+2016-08-07 16:30:16 - INFO ---- Checking SNAPSHOT state for: snap-ae66e334
+2016-08-07 16:30:16 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:30:27 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:30:38 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:30:48 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:30:59 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:31:09 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:31:20 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:31:31 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:31:41 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:31:52 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:32:02 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:32:13 - INFO ---- SNAPSHOT: snap-ae66e334 is still NOT in completed state, current state: pending
+2016-08-07 16:32:23 - INFO ---- SNAPSHOT: snap-ae66e334 is in completed state, adding to copy list..
+2016-08-07 16:32:24 - INFO ---- Checking SNAPSHOT state for: snap-39bc29be
+2016-08-07 16:32:24 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:32:35 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:32:45 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:32:56 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:33:06 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:33:17 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:33:27 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:33:38 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:33:48 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:33:59 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:34:09 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:34:20 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:34:31 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:34:41 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:34:52 - INFO ---- SNAPSHOT: snap-39bc29be is still NOT in completed state, current state: pending
+2016-08-07 16:35:02 - INFO ---- SNAPSHOT: snap-39bc29be is in completed state, adding to copy list..
+2016-08-07 16:35:03 - INFO ---- Checking SNAPSHOT state for: snap-f5655a6e
+2016-08-07 16:35:03 - INFO ---- SNAPSHOT: snap-f5655a6e is in completed state, adding to copy list..
+2016-08-07 16:35:03 - INFO ---- End of checking snapshot state
+
+2016-08-07 16:35:03 - INFO ---- Start of copy snapshot to us-west-2 region
+2016-08-07 16:35:04 - INFO ---- Running Below Command to copy SNAPSHOT for snap-ae66e334
+2016-08-07 16:35:04 - INFO ---- aws --region us-west-2 ec2 copy-snapshot --source-region us-east-1 --source-snapshot-id snap-ae66e334 --description "Copy from us-east-1 for DR --- GatewaySnapForVolumeNamevol-8CBA65E6-IscsiNamegateway1" --output text
+2016-08-07 16:35:05 - SUCCESS - Copy SNAPSHOT: snap-ae66e334 started successfully...
+
+2016-08-07 16:35:05 - INFO ---- Tagging copy SNAPSHOT using below syntax
+2016-08-07 16:35:06 - INFO ---- aws --region us-west-2 ec2 create-tags --resources snap-3c6e41c6 --tags Key=Name,Value=gateway1 Key=BU,Value=GlobalBackup Key=BackupType,Value=WEEKLY Key=CreatedBy,Value=AutomatedBackupSG Key=Org_VolumeId,Value=vol-8CBA65E6 Key=BackupVolume,Value=StorageGateway
+2016-08-07 16:35:08 - INFO ---- Running Below Command to copy SNAPSHOT for snap-39bc29be
+2016-08-07 16:35:08 - INFO ---- aws --region us-west-2 ec2 copy-snapshot --source-region us-east-1 --source-snapshot-id snap-39bc29be --description "Copy from us-east-1 for DR --- GatewaySnapForVolumeNamevol-8DC46CE6-IscsiNamegateway1" --output text
+2016-08-07 16:35:09 - SUCCESS - Copy SNAPSHOT: snap-39bc29be started successfully...
+
+2016-08-07 16:35:09 - INFO ---- Tagging copy SNAPSHOT using below syntax
+2016-08-07 16:35:10 - INFO ---- aws --region us-west-2 ec2 create-tags --resources snap-89acf8d2 --tags Key=Name,Value=gateway1 Key=BU,Value=GlobalBackup Key=BackupType,Value=WEEKLY Key=CreatedBy,Value=AutomatedBackupSG Key=Org_VolumeId,Value=vol-8DC46CE6 Key=BackupVolume,Value=StorageGateway
+2016-08-07 16:35:11 - INFO ---- waiting for batch to complete
+2016-08-07 16:35:11 - INFO ---- Current batch snapshot list for DR region is:  snap-3c6e41c6 snap-89acf8d2
+2016-08-07 16:35:11 - INFO ---- Running below command to check for status of current batch..
+2016-08-07 16:35:11 - INFO ---- aws --region us-west-2 ec2 describe-snapshots --snapshot-ids  snap-3c6e41c6 snap-89acf8d2 --query Snapshots[].State --output text
+2016-08-07 16:35:11 - INFO ---- Sleeping for 15 seconds in a loop until snapshot-copy finishes or we hit a timeout of 3600 seconds, whichever comes first...
+2016-08-07 16:35:11 - INFO ---- ######################### Start of 15 second sleep loop  #########################
+2016-08-07 16:35:12 - INFO ---- Waiting for snapshot copy to complete:  snap-3c6e41c6 snap-89acf8d2
+2016-08-07 16:35:28 - INFO ---- Waiting for snapshot copy to complete:  snap-3c6e41c6 snap-89acf8d2
+2016-08-07 16:35:44 - INFO ---- Waiting for snapshot copy to complete:  snap-3c6e41c6 snap-89acf8d2
+2016-08-07 16:36:00 - INFO ---- Waiting for snapshot copy to complete:  snap-3c6e41c6 snap-89acf8d2
+2016-08-07 16:36:16 - INFO ---- Waiting for snapshot copy to complete:  snap-3c6e41c6 snap-89acf8d2
+2016-08-07 16:36:32 - INFO ---- Waiting for snapshot copy to complete:  snap-3c6e41c6 snap-89acf8d2
+2016-08-07 16:36:48 - INFO ---- Waiting for snapshot copy to complete:  snap-3c6e41c6 snap-89acf8d2
+2016-08-07 16:37:04 - INFO ---- Waiting for snapshot copy to complete:  snap-3c6e41c6 snap-89acf8d2
+2016-08-07 16:37:19 - INFO ---- Waiting for snapshot copy to complete:  snap-3c6e41c6 snap-89acf8d2
+2016-08-07 16:37:35 - INFO ---- Waiting for snapshot copy to complete:  snap-3c6e41c6 snap-89acf8d2
+2016-08-07 16:37:51 - INFO ----
+2016-08-07 16:37:51 - INFO ---- #######################################################################
+2016-08-07 16:37:51 - INFO ---- ########################## BATCH COMPLETE #############################
+2016-08-07 16:37:51 - INFO ---- #######################################################################
+2016-08-07 16:37:51 - INFO ----
+2016-08-07 16:37:51 - INFO ---- Starting next batch
+2016-08-07 16:37:52 - INFO ---- Running Below Command to copy SNAPSHOT for snap-f5655a6e
+2016-08-07 16:37:52 - INFO ---- aws --region us-west-2 ec2 copy-snapshot --source-region us-east-1 --source-snapshot-id snap-f5655a6e --description "Copy from us-east-1 for DR --- GatewaySnapForVolumeNamevol-A888ADC2-IscsiNamegateway1" --output text
+2016-08-07 16:37:53 - SUCCESS - Copy SNAPSHOT: snap-f5655a6e started successfully...
+
+2016-08-07 16:37:53 - INFO ---- Tagging copy SNAPSHOT using below syntax
+2016-08-07 16:37:54 - INFO ---- aws --region us-west-2 ec2 create-tags --resources snap-642b9239 --tags Key=Name,Value=gateway1 Key=BU,Value=GlobalBackup Key=BackupType,Value=WEEKLY Key=CreatedBy,Value=AutomatedBackupSG Key=Org_VolumeId,Value=vol-A888ADC2 Key=BackupVolume,Value=StorageGateway
+2016-08-07 16:37:55 - INFO ----
+2016-08-07 16:37:55 - INFO ---- End of copy snapshot to us-west-2 region
+2016-08-07 16:37:55 - INFO ----
+2016-08-07 16:37:55 - INFO ---- ****************************************************************************************************
+2016-08-07 16:37:55 - INFO ---- ****************************************************************************************************
+2016-08-07 16:37:55 - INFO ---- Start of checking snapshot state and copy snapshot to us-west-2 region again
+2016-08-07 16:37:55 - INFO ---- Will only run if snapshots where not in completed state previously and were added to retry list
+2016-08-07 16:37:55 - INFO ---- ****************************************************************************************************
+2016-08-07 16:37:55 - INFO ---- ****************************************************************************************************
+
+2016-08-07 16:37:55 - INFO ---- Start of checking snapshot state so it can be added to copy list
+2016-08-07 16:37:55 - INFO ---- End of checking snapshot state
+
+2016-08-07 16:37:55 - INFO ---- Start of copy snapshot to us-west-2 region
+2016-08-07 16:37:55 - INFO ----
+2016-08-07 16:37:55 - INFO ---- End of copy snapshot to us-west-2 region
+2016-08-07 16:37:55 - INFO ----
